@@ -4,3 +4,5 @@ This repo is offering a perfect example for implementing WAGN-GP using Tensorflo
 The script is easy to follow for the beginners since I did not use complicated python structures. 
 
 Original paper is https://arxiv.org/abs/1704.00028
+
+**Data set**
