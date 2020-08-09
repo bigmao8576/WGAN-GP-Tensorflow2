@@ -27,12 +27,12 @@ The dimension of the latent vector is 1000. Considering the mask is a 1d vector,
 
 2. Critic:
 
-Just three dense layers. The activation functions of the first two layers are leaky_relu. Some online documents used sigmoid as the last layer activation for critic, but we found unstability during trainning ('nan' values). So no activation function is used for the last layer.
+Just three dense layers. The activation functions of the first two layers are leaky_relu. **Some online documents used sigmoid as the last layer activation for critic, but we found unstability during trainning ('nan' values).** So no activation function is used for the last layer.
 
 **Training**
 
-1. I found gradient exploding when training WGAN. So I implemented gradient-clipping
-2. For generater, the optimizer is Adam, while RMSprop for critic
+1. I found **gradient exploding** when training WGAN. So I implemented gradient-clipping.
+2. For generater, the optimizer is Adam, while RMSprop for critic.
 3. A flag function was used for iteratively examining the generated data, once these data meet some criterion, the training stops.
 
 The training curves are shown as follows:
