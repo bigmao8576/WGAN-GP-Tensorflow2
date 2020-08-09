@@ -12,3 +12,6 @@ The dataset is in pickle form, one can open it by
 ```
 real_mask = pickle.load( open( "mask_data.pkl", "rb" ) )
 ```
+This data is a set of masks, which would be used for language model or signal model with different lengths. Say, if we hope to generate the signals with variant length, we can train a gan for generating the mask first. The values of the mask are either '0' or '1' in float32 form. The maximum length is 8192 (2^13). Some examples are shown as follow
+
+![Image of Yaktocat](https://github.com/bigmao8576/WGAN_GP_MASK/blob/master/real_data.png)
