@@ -265,19 +265,21 @@ r_mask = r_mask.shuffle(10000)
 r_mask = r_mask.batch(batch_size)
 
 # if one hopes to fetch one batch just for debugging, use the following code
-temp_iter = r_mask.__iter__()
-x = temp_iter.__next__()
-
-
-z_noise = tf.random.uniform([x.shape[0], network_params['latent_dim']])
-x_fake = mask_generator(z_noise)
-desi_fake = mask_discriminator(x_fake)
-desi_fake = desi_fake.numpy() 
-
-x_fake = x_fake.numpy()
-desi_real = mask_discriminator(x)
-desi_real = desi_real.numpy() 
-
+# =============================================================================
+# temp_iter = r_mask.__iter__()
+# x = temp_iter.__next__()
+# 
+# 
+# z_noise = tf.random.uniform([x.shape[0], network_params['latent_dim']])
+# x_fake = mask_generator(z_noise)
+# desi_fake = mask_discriminator(x_fake)
+# desi_fake = desi_fake.numpy() 
+# 
+# x_fake = x_fake.numpy()
+# desi_real = mask_discriminator(x)
+# desi_real = desi_real.numpy() 
+# 
+# =============================================================================
 
 
 examp_noise = tf.random.uniform([batch_size, network_params['latent_dim']])
