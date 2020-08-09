@@ -6,3 +6,9 @@ The script is easy to follow for the beginners since I did not use complicated p
 Original paper is https://arxiv.org/abs/1704.00028
 
 **Data set**
+
+The dataset is in pickle form, one can open it by
+
+```
+real_mask = pickle.load( open( "mask_data.pkl", "rb" ) )
+```
