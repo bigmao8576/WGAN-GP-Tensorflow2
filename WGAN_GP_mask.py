@@ -183,7 +183,7 @@ def train_g_step(real_data,network_params):
 
     gradients_of_generator = gen_tape.gradient(gen_loss, mask_generator.trainable_variables)
     
-    # I found "clipnorm" in tf.keras.optimizers.Adam() does work correctly
+    # I found "clipnorm" in tf.keras.optimizers.Adam() does NOT work correctly
     # so I used this one to clip the gradient.
     # Also, tf.clip_by_global_norm() may also give you a gradient norm, 
     # but I found it is different from tf.linalg.global_norm()
@@ -204,7 +204,7 @@ def train_d_step(real_data,network_params):
 
     gradients_of_discriminator = disc_tape.gradient(disc_loss, mask_discriminator.trainable_variables)
     
-    # I found "clipnorm" in tf.keras.optimizers.Adam() does work correctly
+    # I found "clipnorm" in tf.keras.optimizers.Adam() does  NOT  work correctly
     # so I used this one to clip the gradient.
     # Also, tf.clip_by_global_norm() may also give you a gradient norm, 
     # but I found it is different from tf.linalg.global_norm()
